@@ -1,0 +1,22 @@
+{
+  "actorSpecification": 1,
+  "name": "apify-brazil-inmet-weather-alerts",
+  "title": "Brazil INMET Severe Weather Alerts & Agro/Insurance Risk",
+  "description": "Extract real-time active severe weather alerts from Brazil National Institute of Meteorology (INMET) across hoje and futuro windows, filtered by state (UF), municipality or 7-digit IBGE code with GeoJSON polygons and MCP support.",
+  "version": "0.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "python-start",
+    "generatedBy": "Antigravity"
+  },
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "defaultMemoryMbytes": 512,
+  "usesStandbyMode": true,
+  "webServerMcpPath": "/mcp"
+}

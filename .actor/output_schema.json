@@ -1,0 +1,11 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Brazil INMET Weather Alerts Output",
+  "properties": {
+    "dataset": {
+      "type": "string",
+      "title": "INMET Active Severe Weather Dataset",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

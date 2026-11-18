@@ -1,0 +1,76 @@
+{
+  "title": "Brazil INMET Weather Alerts Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "mode": {
+      "title": "Query Mode",
+      "type": "string",
+      "description": "Fetch all active severe weather warnings across Brazil, filter by state (UF), or filter by municipality / IBGE code.",
+      "enum": [
+        "active_alerts",
+        "alerts_by_state",
+        "alerts_by_municipality"
+      ],
+      "default": "active_alerts",
+      "prefill": "active_alerts"
+    },
+    "uf": {
+      "title": "State Acronym (UF)",
+      "type": "string",
+      "description": "Optional 2-letter Brazilian state code (e.g. SP, RS, AL, MT, BA) for alerts_by_state.",
+      "editor": "textfield",
+      "default": ""
+    },
+    "query": {
+      "title": "Municipality or Hazard Keyword",
+      "type": "string",
+      "description": "Optional case-insensitive municipality name, weather hazard (e.g. Tempestade, Chuvas Intensas), or keyword.",
+      "editor": "textfield",
+      "default": ""
+    },
+    "ibgeCode": {
+      "title": "7-Digit IBGE Municipality Code",
+      "type": "string",
+      "description": "Optional exact 7-digit IBGE city code (e.g. 2704302 for Maceio, 3550308 for Sao Paulo).",
+      "editor": "textfield",
+      "default": ""
+    },
+    "severityFilter": {
+      "title": "Severity Level Filter",
+      "type": "string",
+      "description": "Optional severity filter: all, Perigo Potencial, Perigo, or Grande Perigo.",
+      "enum": ["all", "Perigo Potencial", "Perigo", "Grande Perigo"],
+      "default": "all"
+    },
+    "includePolygons": {
+      "title": "Include GeoJSON Alert Polygon",
+      "type": "boolean",
+      "description": "Include parsed GeoJSON geometry polygon for spatial intersection workflows.",
+      "default": true
+    },
+    "includeAllMunicipalities": {
+      "title": "Include Full Municipality List",
+      "type": "boolean",
+      "description": "Include full list of affected municipality names instead of sample + matches.",
+      "default": false
+    },
+    "maxResults": {
+      "title": "Max Results",
+      "type": "integer",
+      "description": "Maximum number of alerts returned.",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 500
+    },
+    "timeoutSecs": {
+      "title": "Request Timeout (Seconds)",
+      "type": "integer",
+      "description": "HTTP timeout in seconds when polling INMET.",
+      "default": 30,
+      "minimum": 5,
+      "maximum": 60
+    }
+  },
+  "required": ["mode"]
+}

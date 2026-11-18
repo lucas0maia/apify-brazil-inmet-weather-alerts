@@ -1,0 +1,37 @@
+{
+  "actorSpecification": 1,
+  "views": {
+    "overview": {
+      "title": "Brazil INMET Active Severe Weather Alerts",
+      "transformation": {
+        "fields": [
+          "horizon",
+          "alertCode",
+          "description",
+          "severity",
+          "colorHex",
+          "startsAt",
+          "endsAt",
+          "affectedUfs",
+          "affectedMunicipalitiesCount",
+          "sourceUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "horizon": { "label": "Window", "format": "text" },
+          "alertCode": { "label": "Alert ID", "format": "text" },
+          "description": { "label": "Hazard", "format": "text" },
+          "severity": { "label": "Severity", "format": "text" },
+          "colorHex": { "label": "Color", "format": "text" },
+          "startsAt": { "label": "Starts", "format": "text" },
+          "endsAt": { "label": "Ends", "format": "text" },
+          "affectedUfs": { "label": "States (UF)", "format": "text" },
+          "affectedMunicipalitiesCount": { "label": "Cities", "format": "number" },
+          "sourceUrl": { "label": "Official INMET Source", "format": "link" }
+        }
+      }
+    }
+  }
+}
